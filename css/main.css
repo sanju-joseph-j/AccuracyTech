@@ -1734,7 +1734,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
   .home-content-tablecell .row {
     max-width: 480px;
-    padding-top: 24rem;
+    padding-top: 12rem;
     padding-bottom: 12rem;
   }
   .home-content-tablecell h3 {
@@ -1747,6 +1747,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 @media only screen and (max-width: 500px) {
   .home-content-tablecell .row {
     max-width: 420px;
+    padding-top: 24rem;
+    padding-bottom: 12rem;
   }
   .home-content-tablecell h3 {
     font-size: 1.5rem;
