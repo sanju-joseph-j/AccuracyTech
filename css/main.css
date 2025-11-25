@@ -1488,10 +1488,21 @@ header .header-logo a {
  * header section 
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
+  header .header-logo {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
   header .header-logo a {
-    width: 137px;
-    height: 50px;
-    background-size: 137px 50px;
+    width: 125px;
+    height: 125px;
+    background-size: 125px 125px;
+    background-image: url("../images/logo-mobile.png"); 
   }
 }
 @media only screen and (max-width: 400px) {
