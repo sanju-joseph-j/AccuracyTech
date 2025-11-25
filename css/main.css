@@ -471,7 +471,7 @@ td:last-child {
 }
 
 .pace .pace-progress {
-  background: #f9a828;
+  background: #E63700;
   position: fixed;
   z-index: 900;
   top: 0;
@@ -510,7 +510,7 @@ td:last-child {
   margin-left: -30px;
   margin-top: -30px;
   padding: 0;
-  background-color: #f9a828;
+  background-color: #E63700;
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -1934,10 +1934,10 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   color: rgba(242, 242, 242, 0.5);
 }
 #services .section-intro h1 {
-  color: rgb(249,168,40);
+  color: #FFFFFF;
 }
 #services .section-intro .lead {
-  color: #FFFFFF;
+  color: rgba(242, 242, 242, 0.5);
 }
 #services .services-content {
   text-align: center;
@@ -1960,12 +1960,12 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #services .services-list .icon i {
   font-size: 5.4rem;
-  color: #f9a828;
+  color: #ff3c00;
 }
 #services .services-list .h05 {
   font-size: 1.7rem;
   line-height: 1.765;
-  color: #f9a828;
+  color: #ff3c00;
   margin-bottom: 3rem;
 }
 
@@ -2597,7 +2597,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   padding: .6rem 2rem .6rem 2rem;
   margin: 0;
   color: #000000;
-  background: #f9a828;
+  background: #ff3c00;
   border-radius: 3px;
 }
 #contact form .form-field label::after {
@@ -2607,7 +2607,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   margin-top: -6px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #f9a828;
+  border-bottom: 5px solid #ff3c00;
   content: "";
 }
 #contact form ::-webkit-input-placeholder {
@@ -2660,12 +2660,12 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   line-height: 6rem;
   padding: 0 3rem;
   width: 100%;
-  background: #f9a828;
+  background: #ff3c00;
   color: #000000;
   margin-top: .6rem;
 }
 #contact button.submitform:hover, #contact button.submitform:focus {
-  background: #f89e0f;
+  background: #ff6623;
 }
 
 #message-warning, #message-success {
@@ -2681,7 +2681,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 
 #message-success {
-  color: #f9a828;
+  color: #ff3c00;
 }
 
 #message-warning i,
