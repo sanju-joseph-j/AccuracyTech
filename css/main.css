@@ -560,7 +560,7 @@ select {
   padding: 1.5rem 2rem;
   border: 0;
   outline: none;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   color: #444444;
   font-family: "montserrat-regular", sans-serif;
   font-size: 1.4rem;
@@ -1246,8 +1246,8 @@ header .row {
  * ------------------------------------------------------------------- */
 header .header-logo {
   position: absolute;
-  left: 32px;
-  top: 42px;
+  left: 24px;
+  top: -12px;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
@@ -1260,10 +1260,10 @@ header .header-logo a {
   padding: 0;
   outline: 0;
   border: none;
-  width: 57px;
-  height: 27px;
+  width: 350px;
+  height: 125px;
   background: url("../images/logo.png") no-repeat center;
-  background-size: 57px 27px;
+  background-size: 350px 125px;
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
@@ -1281,7 +1281,7 @@ header .header-logo a {
   display: block;
   position: fixed;
   right: 32px;
-  top: 30px;
+  top: 38px;
   height: 42px;
   width: 42px;
   line-height: 42px;
@@ -1363,7 +1363,7 @@ header .header-logo a {
   overflow-y: auto;
   z-index: 800;
   -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -1489,9 +1489,9 @@ header .header-logo a {
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
   header .header-logo a {
-    width: 51px;
-    height: 24px;
-    background-size: 51px 24px;
+    width: 137px;
+    height: 50px;
+    background-size: 137px 50px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -1557,7 +1557,7 @@ header .header-logo a {
 }
 .home-content-tablecell h1 {
   font-family: "montserrat-bold", serif;
-  font-size: 9rem;
+  font-size: 5rem;
   line-height: 1.133;
   color: #FFFFFF;
 }
@@ -1777,25 +1777,26 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  * ------------------------------------------------------------------- */
 #about {
   position: relative;
-  padding: 4.2rem 0 12rem;
+  padding: 4.2rem 0 4.2rem;
   background-color: #FFFFFF;
   min-height: 696px;
   text-align: center;
 }
 #about .about-wrap {
-  max-width: 850px;
+  max-width: 1000px;
 }
 #about span {
   color: #07617d;
 }
 #about h3 {
   font-family: "montserrat-bold", sans-serif;
-  font-size: 1.8rem;
+  font-size: 4rem;
   line-height: 1.667;
   color: #07617d;
   text-transform: uppercase;
   letter-spacing: .3rem;
   position: relative;
+  margin-bottom: -0.5rem;
 }
 #about h3::before {
   display: block;
@@ -1807,10 +1808,11 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #about .lead {
   font-family: "librebaskerville-bold", serif;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1.8;
   color: #2e383f;
-  margin-top: 6rem;
+  margin-top: 3rem;
+
 }
 
 /* ------------------------------------------------------------------- 
@@ -1921,10 +1923,10 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   color: rgba(242, 242, 242, 0.5);
 }
 #services .section-intro h1 {
-  color: #FFFFFF;
+  color: rgb(249,168,40);
 }
 #services .section-intro .lead {
-  color: rgba(242, 242, 242, 0.4);
+  color: #FFFFFF;
 }
 #services .services-content {
   text-align: center;
@@ -1939,7 +1941,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   padding: 0 50px;
 }
 #services .services-list .service-item p {
-  color: rgba(242, 242, 242, 0.5);
+  color: #FFFFFF;
 }
 #services .services-list .icon {
   display: inline-block;
@@ -1952,7 +1954,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #services .services-list .h05 {
   font-size: 1.7rem;
   line-height: 1.765;
-  color: #FFFFFF;
+  color: #f9a828;
   margin-bottom: 3rem;
 }
 
@@ -2035,7 +2037,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #portfolio .bricks-wrapper .brick {
   float: left;
-  width: 50%;
+  width: 50.01%;
   padding: 0;
   margin: 0;
 }
@@ -2270,13 +2272,13 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #testimonials h2 {
   font-family: "montserrat-bold", sans-serif;
-  font-size: 1.8rem;
+  font-size: 3rem;
   line-height: 1.667;
   color: #07617d;
   text-transform: uppercase;
   letter-spacing: .3rem;
   position: relative;
-  margin-bottom: 4.2rem;
+  margin-bottom: -1.5rem;
 }
 
 #testimonials .flex-container {
@@ -2319,7 +2321,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   margin: 0 auto 1.2rem auto;
   display: block;
   border-radius: 50%;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 #testimonial-slider .testimonial-author .author-info {
   display: inline-block;
@@ -2484,7 +2486,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #clients .owl-carousel .owl-dots .owl-dot {
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 #clients .owl-carousel .owl-dots .owl-dot span {
   width: 9px;
@@ -2492,7 +2494,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   background-color: #959595;
   margin: 6px 6px;
   display: block;
-  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
   transition: opacity 200ms ease;
   border-radius: 50%;
 }
