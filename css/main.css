@@ -1490,8 +1490,8 @@ header .header-logo a {
 @media only screen and (max-width: 768px) {
   header .header-logo {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: -1px;
+  top: -1px;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
