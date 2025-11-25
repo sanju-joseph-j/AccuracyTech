@@ -1490,8 +1490,8 @@ header .header-logo a {
 @media only screen and (max-width: 768px) {
   header .header-logo {
   position: absolute;
-  left: -1px;
-  top: -1px;
+  left: 0px;
+  top: 0px;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
@@ -1734,7 +1734,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
   .home-content-tablecell .row {
     max-width: 480px;
-    padding-top: 12rem;
+    padding-top: 24rem;
     padding-bottom: 12rem;
   }
   .home-content-tablecell h3 {
