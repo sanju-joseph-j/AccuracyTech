@@ -298,50 +298,75 @@
 	};
 
 
-  /* Contact Form
-   * ------------------------------------------------------ */
-   var ssContactForm = function() {   	
+  /* Contact Form (JSON aware) */
+var ssContactForm = function() {
 
-   	/* local validation */   	
-		$('#contactForm').validate({
+  /* local validation */
+  $('#contactForm').validate({
 
-			/* submit via ajax */
-			submitHandler: function(form) {				
-				var sLoader = $('#submit-loader');			
+    /* submit via ajax */
+    submitHandler: function(form) {
+      var sLoader = $('#submit-loader');
 
-				$.ajax({   	
-			      type: "POST",
-			      url: "inc/sendEmail.php",
-			      data: $(form).serialize(),
+      $.ajax({
+        type: "POST",
+        url: "inc/sendEmail.php",
+        data: $(form).serialize(),
+        dataType: 'json',        // <<< expect JSON from server
+        beforeSend: function() {
+          sLoader.fadeIn();
+        },
+        success: function(res) {
+          // res is now a parsed object
+          if (res && res.status === 'OK') {
+            sLoader.fadeOut();
+            $('#message-warning').hide();
+            $('#contactForm').fadeOut();
+            $('#message-success').fadeIn().html(res.message || 'Message sent.');
+          }
+          else if (res && res.status === 'validation_error') {
+            sLoader.fadeOut();
+            // Show friendly validation message(s)
+            var msgs = [];
+            for (var k in res.errors) { if (res.errors.hasOwnProperty(k)) msgs.push(res.errors[k]); }
+            $('#message-warning').html('Please fix: ' + msgs.join(' | ')).fadeIn();
+          }
+          else {
+            sLoader.fadeOut();
+            // server returned JSON but not OK
+            var m = (res && res.message) ? res.message : 'Something went wrong. Please try again.';
+            $('#message-warning').html(m).fadeIn();
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          sLoader.fadeOut();
 
-			      beforeSend: function() { 
-			      	sLoader.fadeIn(); 
-			      },
-			      success: function(msg) {
-		            // Message was sent
-		            if (msg == 'OK') {
-		            	sLoader.fadeOut(); 
-		               $('#message-warning').hide();
-		               $('#contactForm').fadeOut();
-		               $('#message-success').fadeIn();   
-		            }
-		            // There was an error
-		            else {
-		            	sLoader.fadeOut(); 
-		               $('#message-warning').html(msg);
-			            $('#message-warning').fadeIn();
-		            }
-			      },
-			      error: function() {
-			      	sLoader.fadeOut(); 
-			      	$('#message-warning').html("Something went wrong. Please try again.");
-			         $('#message-warning').fadeIn();
-			      }
-		      });    		
-	  		}
+          // Try to parse JSON error body if present (useful when server returns 500 + JSON)
+          var fallback = "Something went wrong. Please try again.";
+          try {
+            var json = jqXHR.responseJSON || (jqXHR.responseText ? JSON.parse(jqXHR.responseText) : null);
+            if (json) {
+              if (json.status === 'validation_error' && json.errors) {
+                var msgs = [];
+                for (var k in json.errors) if (json.errors.hasOwnProperty(k)) msgs.push(json.errors[k]);
+                $('#message-warning').html('Please fix: ' + msgs.join(' | ')).fadeIn();
+                return;
+              }
+              if (json.message) {
+                $('#message-warning').html(json.message).fadeIn();
+                return;
+              }
+            }
+          } catch (e) { /* ignore parse errors */ }
 
-		});
-   };	
+          // Generic fallback
+          $('#message-warning').html(fallback).fadeIn();
+        }
+      });
+    }
+
+  });
+};
 
 
   /* AjaxChimp
